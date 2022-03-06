@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user'
 ]
 
 MIDDLEWARE = [
@@ -74,27 +75,27 @@ WSGI_APPLICATION = 'ShareDiaryProject.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 # ----DEBUG
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-# ----PRODUCTION(Azure Cloud)
 # DATABASES = {
-#      'default': {
-#          'ENGINE': 'sql_server.pyodbc',
-#          'NAME': 'ShareDiary',
-#          'USER': 'sql-admin',
-#          'PASSWORD': 'DEVShareDiary000',
-#          'HOST': 'tcp:sharediary.database.windows.net',
-#          'PORT': '1433',
-#          'OPTIONS': {
-#              'driver': 'ODBC Driver 17 for SQL Server',
-#              'MARS_Connection': 'True',
-#          }
-#      }
-#  }
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+# ----PRODUCTION(Azure Cloud)
+DATABASES = {
+     'default': {
+         'ENGINE': 'sql_server.pyodbc',
+         'NAME': 'ShareDiary',
+         'USER': 'sql-admin',
+         'PASSWORD': 'DEVShareDiary000',
+         'HOST': 'sharediary.database.windows.net',
+         'PORT': '1433',
+         'OPTIONS': {
+             'driver': 'ODBC Driver 17 for SQL Server',
+             'MARS_Connection': 'True',
+         }
+     }
+ }
 
 
 # Password validation
